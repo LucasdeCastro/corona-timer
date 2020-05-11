@@ -85,9 +85,13 @@
 
       document.getElementById("time-picker").addEventListener("blur", e => {
         const value = e.target.value;
-        const time = new Date(value.split("-").map(e => parseInt(e, 10)))
-        localStorage.setItem("time", time.getTime());
-        e.target.style.display = "none";
+        if (e.target.value) {
+          const time = new Date(value.split("-").map(e => parseInt(e, 10)))
+          if (!isNaN(time.getTime())) {
+            localStorage.setItem("time", time.getTime());
+            e.target.style.display = "none";
+          }
+        }
       })
     })
   </script>
