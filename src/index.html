@@ -75,7 +75,7 @@
           ? new Date(parseInt(localStorage.getItem("time"), 10))
           : new Date(2020, 02, 17, 19, 30, 20, 00);
 
-        const end = Date.now();
+        const end = 1636364715835;
         const diffInDays = getTimeDiff([end, start]);
         const diffInHours = getRest(getTimeDiff([end, start]), 24)
         const diffInMinutes = getRest(diffInHours, 60)
